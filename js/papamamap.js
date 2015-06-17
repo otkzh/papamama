@@ -348,7 +348,7 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<tr>';
         content += '<th>時間</th>';
         content += '<td>';
-        content += open + '縲鰀' + close;
+        content += open + '～' + close;
         content += '</td>';
         content += '</tr>';
     }
@@ -417,7 +417,7 @@ Papamamap.prototype.getPopupContent = function(feature)
     if (ageS !== undefined && ageS !== null && ageE !== undefined && ageE !== null) {
         content += '<tr>';
         content += '<th>年齢</th>';
-        content += '<td>' + ageS + '縲鰀' + ageE + '</td>';
+        content += '<td>' + ageS + '～鰀' + ageE + '</td>';
         content += '</tr>';
     }
     var full = feature.get('定員') ? feature.get('定員') : feature.get('Full');
