@@ -348,7 +348,7 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<tr>';
         content += '<th>時間</th>';
         content += '<td>';
-        content += open + '〜' + close;
+        content += open + '縲鰀' + close;
         content += '</td>';
         content += '</tr>';
     }
@@ -397,9 +397,10 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '</tr>';
     }
     if(type == "認可保育所") {
+    /**
         content += '<tr>';
-        content += '<th>欠員</th>';
-        content += '<td>';
+        content += '<th>欠員:不明</th>';
+        content += '<td>'; **/
         var vacancy = feature.get('Vacancy') ? feature.get('Vacancy') : feature.get('Vacancy');
         if (vacancy !== undefined && vacancy !== null) {
             content += '<a href="http://www.city.sapporo.jp/kodomo/kosodate/l4_01.html" target="_blank">空きあり</a>';
@@ -416,7 +417,7 @@ Papamamap.prototype.getPopupContent = function(feature)
     if (ageS !== undefined && ageS !== null && ageE !== undefined && ageE !== null) {
         content += '<tr>';
         content += '<th>年齢</th>';
-        content += '<td>' + ageS + '〜' + ageE + '</td>';
+        content += '<td>' + ageS + '縲鰀' + ageE + '</td>';
         content += '</tr>';
     }
     var full = feature.get('定員') ? feature.get('定員') : feature.get('Full');
