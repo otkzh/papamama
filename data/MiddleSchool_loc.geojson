@@ -3,7 +3,6 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 
 "features": [
-{ "type": "Feature", "properties": { "A32_001": 1101, "A32_002": "札幌市立", "A32_003": "宮の森中学校", "address": "札幌市中央区宮の森1条16-5-1", "x": 141.295456, "y": 43.046640, "label": "宮の森中" }, "geometry": { "type": "Point", "coordinates": [ 141.2954564028, 43.046639956600004 ] } },
 {"type":"Feature","geometry":{"type":"Point","coordinates":[139.9107649,35.8621727]},"properties":{"A32_001":"1101","A32_002":"流山市立","A32_003":"南部中学校","address":"流山市加3-600-1","y":"35.8621727","x":"139.9107649","label":"南部中学校"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[139.922366,35.882411]},"properties":{"A32_001":"1101","A32_002":"流山市立","A32_003":"常盤松中学校","address":"流山市東初石3-134","y":"35.882411","x":"139.922366","label":"常盤松中学校"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[139.9065392,35.8968028]},"properties":{"A32_001":"1101","A32_002":"流山市立","A32_003":"北部中学校","address":"流山市中野久木577","y":"35.8968028","x":"139.9065392","label":"北部中学校"}},
