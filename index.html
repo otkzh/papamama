@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>さっぽろ保育園マップ by Code for Sapporo</title>
+        <title>ながれやま保育園マップ by Code for Nagareyama</title>
         <link rel="stylesheet" href="css/ol.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css.map" type="text/css">
@@ -16,9 +16,10 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-54609451-2', 'auto');
-        ga('send', 'pageview');
-        </script>
+       ga('create', 'UA-64177135-1', 'auto');
+       ga('send', 'pageview');
+
+</script>
     </head>
     <body>
         <div data-role="page" id="mainPage">
@@ -27,9 +28,9 @@
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <label for="cbNinka" id="lblNinka">認可</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
-
+<!--
                     <label for="cbNinkagai" id="lblNinkagai">認可外</label>
-                    <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
+                    <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">-->
 
                     <label for="cbKindergarten" id="lblKindergarten">幼</label>
                     <input type="checkbox" name="cbKindergarten" id="cbKindergarten" checked="checked">
@@ -40,17 +41,17 @@
                     <label for="cbMiddleSchool" id="lblMiddleSchool">中</label>
                     <input type="checkbox" name="cbMiddleSchool" id="cbMiddleSchool">
 
-                    <a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>
+                    <!--<a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>-->
 
                     <label for="changeBaseMap">背景</label>
                     <select id="changeBaseMap" data-mini="true">
                         <option>背景</option>
                     </select>
 
-                    <label for="moveTo">最寄駅</label>
+                   <!-- <label for="moveTo">最寄駅</label>
                     <select id="moveTo" data-mini="true">
                         <option>最寄駅</option>
-                    </select>
+                    </select>-->
 
                     <label id="lblDisplayCircle" for="cbDisplayCircle" class="ui-btn-icon-notext">距離円<span class="ui-icon-bullseye ui-btn-icon-notext"></span></label>
                     <input type="checkbox" id="cbDisplayCircle" name="cbDisplayCircle" data-mini="true"/>
@@ -150,16 +151,16 @@
         <div data-role="popup" data-history="false" id="helpDialog" data-theme="a" class="ui-corner-all ui-icon-delete ui-btn-left">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
             <div style="padding:10px 20px;">
-                <h3>さっぽろ保育園マップ</h3>
+                <h3>ながれやま保育園マップ</h3>
                 <fieldset>
                     <p>
-                    v1.0 (rev.20141130)
+                    v1.0
                     </p>
-                    <a href="http://www.codeforsapporo.org/papamama/" target="_blank">詳しくはこちら</a>
+                    <a href="http://www.code-for-nagareyama.org/" target="_blank">詳しくはこちら</a>
                 </fieldset>
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <p>
-                    (C) 2014 <a href="http://www.codeforsapporo.org/" target="_blank">Code for Sapporo.</a>
+                    (C) 2015 <a href="http://www.code-for-nagareyama.org/" target="_blank">Code for Nagareyama.</a>
                     </p>
                     <a href="#" data-rel="back" id="helpClose" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-check">閉じる</a>
                 </fieldset>
