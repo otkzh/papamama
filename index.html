@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ながれやま保育園マップ by Code for Nagareyama</title>
+        <title>ながれやま保育園マップ by Code for Nagareyama : 流山</title>
+        <meta name="description" content="千葉県流山市の保育園・幼稚園・小学校・中学校をマップで表示します。特に、保育園に関しては開演時間等で検索が可能です。"
         <link rel="stylesheet" href="css/ol.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css.map" type="text/css">
@@ -18,19 +19,19 @@
 
        ga('create', 'UA-64177135-1', 'auto');
        ga('send', 'pageview');
-
-</script>
+       </script>
     </head>
     <body>
+      <h1>千葉県流山市 保育園マップ by Code for Nagareyama</h1>
         <div data-role="page" id="mainPage">
             <div role="main" class="ui-content">
             <div id="nav">
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <label for="cbNinka" id="lblNinka">認可保育園</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
-<!--
+
                     <label for="cbNinkagai" id="lblNinkagai">認可外</label>
-                    <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">-->
+                    <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
 
                     <label for="cbKindergarten" id="lblKindergarten">幼</label>
                     <input type="checkbox" name="cbKindergarten" id="cbKindergarten" checked="checked">
@@ -41,7 +42,7 @@
                     <label for="cbMiddleSchool" id="lblMiddleSchool">中</label>
                     <input type="checkbox" name="cbMiddleSchool" id="cbMiddleSchool">
 
-                    <!--<a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>-->
+                    <a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>
 
                     <label for="changeBaseMap">背景</label>
                     <select id="changeBaseMap" data-mini="true">
@@ -66,11 +67,8 @@
                             <option value="5000">半径 5km</option>
                         </optgroup>
                     </select>
-
-                    <a id="btnHelp" href="http://www.code-for-nagareyama.org/" target="_blank" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
-                    <!--
                     <a id="btnHelp" href="#helpDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-icon-question ui-btn-icon-notext">help</a>
-                    -->
+
                 </fieldset>
             </div>
             <div id="map" class="map">
@@ -115,7 +113,7 @@
                         <label for="ninkaVacancy">空きあり</label>
                         <input type="checkbox" id="ninkaVacancy" class="filtercb">
                     </fieldset>
-                    <legend>認可外保育園</legend>
+                   <legend>認可外保育園</legend>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkagaiOpenTime" class="select">開園</label>
                         <select id="ninkagaiOpenTime" class="filtersb">
@@ -140,7 +138,7 @@
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <label for="ninkagaiShomei">証明書あり</label>
                     <input type="checkbox" id="ninkagaiShomei" class="filtercb">
-                    </fieldset>
+                  </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <a href="#" data-rel="back" id="filterApply" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-check">条件適用</a>
                         <a href="#" id="filterReset" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-delete">リセット</a>
