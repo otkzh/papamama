@@ -355,7 +355,7 @@ Papamamap.prototype.getPopupContent = function(feature)
     var memo = feature.get('備考') ? feature.get('備考') : feature.get('Memo');
     if (memo !== undefined && memo !== null) {
         content += '<tr>';
-        content += '<th></th>';
+        content += '<th>備考</th>';
         content += '<td>' + memo + '</td>';
         content += '</tr>';
     }
@@ -369,16 +369,16 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<th></th>';
         content += '<td>';
         if (temp !== undefined && temp !== null) {
-            content += '一時保育 ';
+            content += '一時保育あり ';
         }
         if (holiday !== undefined && holiday !== null) {
-            content += '休日保育 ';
+            content += '休日保育あり ';
         }
         if (night !== undefined && night !== null) {
-            content += '夜間保育 ';
+            content += '夜間保育あり ';
         }
         if (h24 !== undefined && h24 !== null) {
-            content += '24時間 ';
+            content += '24時間あり ';
         }
         content += '</td>';
         content += '</tr>';

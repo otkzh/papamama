@@ -385,7 +385,7 @@ $('#mainPage').on('pageshow', function() {
 	function updateLayerStatus(checkObj)
 	{
 		papamamap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
-		papamamap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
+		//papamamap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
 		papamamap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
 		$('#cbNinka').prop('checked', checkObj.ninka).checkboxradio('refresh');
 		$('#cbNinkagai').prop('checked', checkObj.ninkagai).checkboxradio('refresh');
