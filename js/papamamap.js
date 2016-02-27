@@ -418,7 +418,7 @@ Papamamap.prototype.getPopupContent = function(feature)
             content += '<a href="http://www.city.nagareyama.chiba.jp/life/19/159/026599.html" target="_blank">空きあり</a>(2/1現在)';
 
         } else {
-            content += '空きなし'
+            content += '<font color="red">空きなし</font>'
         }
         content += '</td>';
         content += '</tr>';
