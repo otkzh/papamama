@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>流山 保育園マップ | Code for Nagareyama</title>
-        <meta name="description" content="千葉県流山市の保育園・幼稚園・小学校・中学校を地図(マップ)で表示します。特に、保育園に関しては開園時間等で検索が可能です。"
+        <meta name="description" content="千葉県流山市の保育園・幼稚園・小学校・中学校を地図(マップ)で表示します。特に、保育園に関しては空き状況、開園時間等で検索が可能です。">
         <link rel="stylesheet" href="css/ol.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css.map" type="text/css">
@@ -29,8 +29,8 @@
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <label for="cbNinka" id="lblNinka">認可保育園</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
-
-                    <!--<label for="cbNinkagai" id="lblNinkagai">認可外</label>
+<!--
+                    <label for="cbNinkagai" id="lblNinkagai">認可外</label>
                     <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
 -->
                     <label for="cbKindergarten" id="lblKindergarten">幼</label>
@@ -42,18 +42,18 @@
                     <label for="cbMiddleSchool" id="lblMiddleSchool">中</label>
                     <input type="checkbox" name="cbMiddleSchool" id="cbMiddleSchool">
 
-                    <a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">検索</a>
+                    <a id="btnFilter" href="#filterdialog" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-btn-a ui-icon-filter ui-btn-icon-right ui-icon-check">空き状況 & 検索</a>
 
                     <label for="changeBaseMap">背景</label>
                     <select id="changeBaseMap" data-mini="true">
                         <option>背景</option>
                     </select>
-
-                   <!-- <label for="moveTo">最寄駅</label>
+<!--
+                   <label for="moveTo">最寄駅</label>
                     <select id="moveTo" data-mini="true">
                         <option>最寄駅</option>
-                    </select>-->
-
+                    </select>
+-->
                     <label id="lblDisplayCircle" for="cbDisplayCircle" class="ui-btn-icon-notext">距離円<span class="ui-icon-bullseye ui-btn-icon-notext"></span></label>
                     <input type="checkbox" id="cbDisplayCircle" name="cbDisplayCircle" data-mini="true"/>
 
@@ -83,7 +83,22 @@
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
             <form>
                 <div style="padding:10px 20px;">
-                    <h3>保育施設 絞り込み</h3>
+                  <h3>空き状況(2/1現在)</h3>
+                  <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                      <label for="Vacancy0">0歳</label>
+                      <input type="checkbox" id="Vacancy0" class="filtercb">
+                      <label for="Vacancy1">1歳</label>
+                      <input type="checkbox" id="Vacancy1" class="filtercb">
+                      <label for="Vacancy2">2歳</label>
+                      <input type="checkbox" id="Vacancy2" class="filtercb">
+                      <label for="Vacancy3">3歳</label>
+                      <input type="checkbox" id="Vacancy3" class="filtercb">
+                      <label for="Vacancy4">４歳</label>
+                      <input type="checkbox" id="Vacancy4" class="filtercb">
+                      <label for="Vacancy5">5歳</label>
+                      <input type="checkbox" id="Vacancy5" class="filtercb">
+                   </fieldset>
+
                     <legend>認可保育園</legend>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkaOpenTime" class="select">開園</label>

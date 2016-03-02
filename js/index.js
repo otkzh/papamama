@@ -320,6 +320,38 @@ $('#mainPage').on('pageshow', function() {
 			conditions['ninkaVacancy'] = 1;
 			ninka = true;
 		}
+		//空き状況
+		// 0歳児
+		if($('#Vacancy0').prop('checked')) {
+			conditions['Vacancy0'] = 1;
+			ninka = true;
+		}
+		// 1歳児
+		if($('#Vacancy1').prop('checked')) {
+			conditions['Vacancy1'] = 1;
+			ninka = true;
+		}
+		// 2歳児
+		if($('#Vacancy2').prop('checked')) {
+			conditions['Vacancy2'] = 1;
+			ninka = true;
+		}
+		// 3歳児
+		if($('#Vacancy3').prop('checked')) {
+			conditions['Vacancy3'] = 1;
+			ninka = true;
+		}
+		// 4歳児
+		if($('#Vacancy4').prop('checked')) {
+			conditions['Vacancy4'] = 1;
+			ninka = true;
+		}
+		// 5歳児
+		if($('#Vacancy5').prop('checked')) {
+			conditions['Vacancy5'] = 1;
+			ninka = true;
+		}
+
 
 		// 認可外
 		if($('#ninkagaiOpenTime option:selected').val() !== "") {
@@ -350,6 +382,7 @@ $('#mainPage').on('pageshow', function() {
 		} else {
 			papamamap.addNurseryFacilitiesLayer(nurseryFacilities);
 			$('#btnFilter').css('background-color', '#f6f6f6');
+
 			ninka = ninkagai = kindergarten = true;
 		}
 

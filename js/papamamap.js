@@ -397,17 +397,28 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '</tr>';
     }
     if(type == "認可保育所") {
-    /**
+
         content += '<tr>';
-        content += '<th>欠員:不明</th>';
-        content += '<td>'; **/
-        var vacancy = feature.get('Vacancy') ? feature.get('Vacancy') : feature.get('Vacancy');
-        if (vacancy !== undefined && vacancy !== null) {
-            content += '<a href="http://www.city.sapporo.jp/kodomo/kosodate/l4_01.html" target="_blank">空きあり</a>';
-        }
-        var vacancyDate = feature.get('VacancyDate');
-        if (vacancyDate !== undefined && vacancyDate !== null) {
-            content += " (" + vacancyDate + ")";
+        content += '<th>欠員</th>';
+        content += '<td>';
+        var vacancy0 = feature.get('Vacancy0') ? feature.get('Vacancy0') : feature.get('Vacancy0');
+        var vacancy1 = feature.get('Vacancy1') ? feature.get('Vacancy1') : feature.get('Vacancy1');
+        var vacancy2 = feature.get('Vacancy2') ? feature.get('Vacancy2') : feature.get('Vacancy2');
+        var vacancy3 = feature.get('Vacancy3') ? feature.get('Vacancy3') : feature.get('Vacancy3');
+        var vacancy4 = feature.get('Vacancy4') ? feature.get('Vacancy4') : feature.get('Vacancy4');
+        var vacancy5 = feature.get('Vacancy5') ? feature.get('Vacancy5') : feature.get('Vacancy5');
+
+        if ((vacancy0 !== undefined && vacancy0 !== null)
+        || (vacancy1 !== undefined && vacancy1 !== null)
+        || (vacancy2 !== undefined && vacancy2 !== null)
+        || (vacancy3 !== undefined && vacancy3 !== null)
+        || (vacancy4 !== undefined && vacancy4 !== null)
+        || (vacancy5 !== undefined && vacancy5 !== null) )
+        {
+            content += '<a href="http://www.city.nagareyama.chiba.jp/life/19/159/026599.html" target="_blank">空きあり</a>(2/1現在)';
+
+        } else {
+            content += '<font color="red">空きなし</font>'
         }
         content += '</td>';
         content += '</tr>';
