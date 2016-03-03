@@ -342,6 +342,9 @@ Papamamap.prototype.getPopupContent = function(feature)
 {
     var content = '';
     content = '<table><tbody>';
+
+
+
     var open  = feature.get('開園時間') ? feature.get('開園時間') : feature.get('Open');
     var close = feature.get('終園時間') ? feature.get('終園時間') : feature.get('Close');
     if (open != undefined && open !== null && open !== "" && close !== undefined && close !== null && close !== "") {
@@ -415,11 +418,12 @@ Papamamap.prototype.getPopupContent = function(feature)
         || (vacancy4 !== undefined && vacancy4 !== null)
         || (vacancy5 !== undefined && vacancy5 !== null) )
         {
-            content += '<a href="http://www.city.nagareyama.chiba.jp/life/19/159/026599.html" target="_blank">空きあり</a>(2/1現在)';
+            content += '<font color="green">空きあり</font>';
 
         } else {
-            content += '<font color="red">空きなし</font>'
+            content += '<font color="red">空きなし</font>';
         }
+        content += '(2/1現在)<br/>最新情報は<a href="http://www.city.nagareyama.chiba.jp/life/19/159/028025.html" target="_blank">流山市HPへ</a>';
         content += '</td>';
         content += '</tr>';
     }
