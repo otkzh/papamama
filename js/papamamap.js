@@ -423,7 +423,7 @@ Papamamap.prototype.getPopupContent = function(feature)
         } else {
             content += '<font color="red">空きなし</font>';
         }
-        content += '(2/1現在)<br/>最新情報は<a href="http://www.city.nagareyama.chiba.jp/life/19/159/028025.html" target="_blank">流山市HPへ</a>';
+        content += '(4/1現在)<br/>最新情報は<a href="http://www.city.nagareyama.chiba.jp/life/19/159/028025.html" target="_blank">流山市HPへ</a>';
         content += '</td>';
         content += '</tr>';
     }
