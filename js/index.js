@@ -1,8 +1,8 @@
 // 地図表示時の中心座標
-var init_center_coords = [139.919204, 35.875297];
+var init_center_coords = [139.8101166, 35.7105799];
 
 // Bing APIのキー
-var bing_api_key = 'Ah2PGp8xqRdULgFRotLy0pVjdVE5LvBwQb0ZOAZjEIKe_KHSe2Sz-FqLkabdGQfe';
+var bing_api_key = 'AjhdJIg5uuEQhQqkdhQDm_66xTdamkhGtgw5FVy2tFSMjyoGPG_9uyejoRQH8D3w';
 
 // map
 var map;
@@ -200,7 +200,7 @@ $('#mainPage').on('pageshow', function() {
 		papamamap.switchLayer(this.id, $(this).prop('checked'));
 	});
 
-	// 認可保育所チェックボックスのイベント設定
+	// 認可保育園チェックボックスのイベント設定
 	$('#cbNinka').click(function() {
 		papamamap.switchLayer(this.id, $(this).prop('checked'));
 	});
@@ -209,6 +209,28 @@ $('#mainPage').on('pageshow', function() {
 	$('#cbNinkagai').click(function() {
 		papamamap.switchLayer(this.id, $(this).prop('checked'));
 	});
+
+	// AFOL独自
+	// 家庭的保育所チェックボックスのイベント設定
+	$('#cbKateiteki').click(function() {
+		papamamap.switchLayer(this.id, $(this).prop('checked'));
+	});
+
+	// 小規模保育所チェックボックスのイベント設定
+	$('#cbShoukibo').click(function() {
+		papamamap.switchLayer(this.id, $(this).prop('checked'));
+	});
+
+	// 認定こども園チェックボックスのイベント設定
+	$('#cbKodomoen').click(function() {
+		papamamap.switchLayer(this.id, $(this).prop('checked'));
+	});
+
+	// 認証保育所チェックボックスのイベント設定
+	$('#cbNinshou').click(function() {
+		papamamap.switchLayer(this.id, $(this).prop('checked'));
+	});
+	// AFOL独自ここまで
 
 	// 中学校区チェックボックスのイベント定義
 	$('#cbMiddleSchool').click(function() {
@@ -415,15 +437,22 @@ $('#mainPage').on('pageshow', function() {
 	 * @param  {[type]} checkObj [description]
 	 * @return {[type]}               [description]
 	 */
-	function updateLayerStatus(checkObj)
-	{
-		papamamap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
-		//papamamap.switchLayer($('#cbNinkagai').prop('id'), checkObj.ninkagai);
-		papamamap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
-		$('#cbNinka').prop('checked', checkObj.ninka).checkboxradio('refresh');
-		$('#cbNinkagai').prop('checked', checkObj.ninkagai).checkboxradio('refresh');
-		$('#cbKindergarten').prop('checked', checkObj.kindergarten).checkboxradio('refresh');
-	}
+	 function updateLayerStatus(checkObj)
+ 	{
+ 		papamamap.switchLayer($('#cbNinka').prop('id'), checkObj.ninka);
+ 		papamamap.switchLayer($('#cbKindergarten').prop('id'), checkObj.kindergarten);
+ 		papamamap.switchLayer($('#cbKateiteki').prop('id'), checkObj.kateiteki);
+ 		papamamap.switchLayer($('#cbShoukibo').prop('id'), checkObj.shoukibo);
+ 		papamamap.switchLayer($('#cbKodomoen').prop('id'), checkObj.kodomoen);
+ 		papamamap.switchLayer($('#cbNinshou').prop('id'), checkObj.ninshou);
+
+ 		$('#cbNinka').prop('checked', checkObj.ninka).checkboxradio('refresh');
+ 		$('#cbKindergarten').prop('checked', checkObj.kindergarten).checkboxradio('refresh');
+ 		$('#cbKateiteki').prop('checked', checkObj.kateiteki).checkboxradio('refresh');
+ 		$('#cbShoukibo').prop('checked', checkObj.shoukibo).checkboxradio('refresh');
+ 		$('#cbKodomoen').prop('checked', checkObj.kodomoen).checkboxradio('refresh');
+ 		$('#cbNinshou').prop('checked', checkObj.ninshou).checkboxradio('refresh');
+ 	}
 
 	/**
 	 * 円を描画する 関数内関数

@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>流山 保育園マップ | Code for Nagareyama</title>
-        <meta name="description" content="千葉県流山市の保育園・幼稚園・小学校・中学校を地図(マップ)で表示します。特に、保育園に関しては空き状況、開園時間等で検索できます。">
+        <title>墨田区 保育園マップ | AFOL</title>
+        <meta name="description" content="東京都墨田区の保育園・幼稚園・小学校・中学校を地図(マップ)で表示します。特に、保育園に関しては空き状況、開園時間等で検索できます。">
         <link rel="stylesheet" href="css/ol.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="css/bootstrap.css.map" type="text/css">
@@ -17,22 +17,31 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-64177135-1', 'auto');
+       ga('create', 'UA-55877047-1', 'auto');
        ga('send', 'pageview');
        </script>
     </head>
     <body>
-      <h1>千葉県流山市 保育園マップ by Code for Nagareyama</h1>
+      <h1>東京都墨田区 保育園マップ by AFOL</h1>
         <div data-role="page" id="mainPage">
             <div role="main" class="ui-content">
             <div id="nav">
                 <fieldset id="nav1" data-role="controlgroup" data-type="horizontal" data-mini="true">
-                    <label for="cbNinka" id="lblNinka">認可保育園</label>
+                    <label for="cbNinka" id="lblNinka">認可</label>
                     <input type="checkbox" name="cbNinka" id="cbNinka" checked="checked">
-<!--
-                    <label for="cbNinkagai" id="lblNinkagai">認可外</label>
-                    <input type="checkbox" name="cbNinkagai" id="cbNinkagai" checked="checked">
--->
+
+                    <label for="cbKateiteki" id="lblKateiteki">家庭的</label>
+                    <input type="checkbox" name="cbKateiteki" id="cbKateiteki" checked="checked">
+
+                    <label for="cbShoukibo" id="lblShoukibo">小規模</label>
+                    <input type="checkbox" name="cbShoukibo" id="cbShoukibo" checked="checked">
+
+                    <label for="cbKodomoen" id="lblKodomoen">こども園</label>
+                    <input type="checkbox" name="cbKodomoen" id="cbKodomoen" checked="checked">
+
+                    <label for="cbNinshou" id="lblNinshou">認証</label>
+                    <input type="checkbox" name="cbNinshou" id="cbNinshou" checked="checked">
+
                     <label for="cbKindergarten" id="lblKindergarten">幼</label>
                     <input type="checkbox" name="cbKindergarten" id="cbKindergarten" checked="checked">
 
@@ -48,12 +57,12 @@
                     <select id="changeBaseMap" data-mini="true">
                         <option>背景</option>
                     </select>
-<!--
+
                    <label for="moveTo">最寄駅</label>
                     <select id="moveTo" data-mini="true">
                         <option>最寄駅</option>
                     </select>
--->
+
                     <label id="lblDisplayCircle" for="cbDisplayCircle" class="ui-btn-icon-notext">距離円<span class="ui-icon-bullseye ui-btn-icon-notext"></span></label>
                     <input type="checkbox" id="cbDisplayCircle" name="cbDisplayCircle" data-mini="true"/>
 
@@ -113,22 +122,21 @@
                             <option value="19">〜19:00</option>
                             <option value="20">〜20:00</option>
                             <option value="22">〜22:00</option>
-                            <option value="24">〜00:00</option>
+                            <option value="24">〜24:00</option>
                         </select>
                     </fieldset>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkaIchijiHoiku">一時保育</label>
                         <input type="checkbox" id="ninkaIchijiHoiku" class="filtercb">
-                      <!--  <label for="ninkaYakan">夜間</label>
+                       <label for="ninkaYakan">夜間</label>
                         <input type="checkbox" id="ninkaYakan" class="filtercb">
                         <label for="ninkaKyujitu">休日</label>
-                        <input type="checkbox" id="ninkaKyujitu" class="filtercb"> -->
+                        <input type="checkbox" id="ninkaKyujitu" class="filtercb">
                     </fieldset>
-                    <!--
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkaVacancy">空きあり</label>
                         <input type="checkbox" id="ninkaVacancy" class="filtercb">
-                    </fieldset>-->
+                    </fieldset>
                    <!--<legend>認可外保育園</legend>
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="ninkagaiOpenTime" class="select">開園</label>
@@ -165,16 +173,16 @@
         <div data-role="popup" data-history="false" id="helpDialog" data-theme="a" class="ui-corner-all ui-icon-delete ui-btn-left">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
             <div style="padding:10px 20px;">
-                <h3>ながれやま保育園マップ</h3>
+                <h3>墨田区保育園マップ</h3>
                 <fieldset>
                     <p>
                     v1.0
                     </p>
-                    <a href="http://www.code-for-nagareyama.org/" target="_blank">詳しくはこちら</a>
+                    <a href="" target="_blank">詳しくはこちら</a>
                 </fieldset>
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <p>
-                    (C) 2015 <a href="http://www.code-for-nagareyama.org/" target="_blank">Code for Nagareyama.</a>
+                    (C) 2015 <a href="" target="_blank">AFOL</a>
                     </p>
                     <a href="#" data-rel="back" id="helpClose" class="ui-btn ui-corner-all ui-btn-a ui-btn-icon-left ui-icon-check">閉じる</a>
                 </fieldset>

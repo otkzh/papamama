@@ -32,6 +32,22 @@
 	background-color: #0362A0;
 }
 
+#lblKateiteki.ui-checkbox-on {
+	background-color: #E16E00;
+}
+
+#lblShoukinbo.ui-checkbox-on {
+	background-color: #6E00E1;
+}
+
+#lblKodomoen.ui-checkbox-on {
+	background-color: #5C24FF;
+}
+
+#lblNinshou.ui-checkbox-on {
+	background-color: #006EE1;
+}
+
 #lblKindergarten.ui-checkbox-on {
 	background-color: #FF5C24;
 }

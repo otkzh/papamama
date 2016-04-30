@@ -150,11 +150,14 @@ Papamamap.prototype.animatedMove = function(lon, lat, isTransform)
  */
 Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
 {
-    if(this.map.getLayers().getLength() >= 4) {
-        this.map.removeLayer(this.map.getLayers().item(4));
-        this.map.removeLayer(this.map.getLayers().item(4));
-        this.map.removeLayer(this.map.getLayers().item(4));
-    }
+  if(this.map.getLayers().getLength() >= 7) {
+      this.map.removeLayer(this.map.getLayers().item(7));
+      this.map.removeLayer(this.map.getLayers().item(7));
+      this.map.removeLayer(this.map.getLayers().item(7));
+      this.map.removeLayer(this.map.getLayers().item(7));
+      this.map.removeLayer(this.map.getLayers().item(7));
+      this.map.removeLayer(this.map.getLayers().item(7));
+  }
 
     // 幼稚園
     this.map.addLayer(
@@ -167,17 +170,17 @@ Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
             style: kindergartenStyleFunction
         })
     );
-    // 認可外
-    this.map.addLayer(
-        new ol.layer.Vector({
-            source: new ol.source.GeoJSON({
-                projection: 'EPSG:3857',
-                object: facilitiesData
-            }),
-            name: 'layerNinkagai',
-            style: ninkagaiStyleFunction
-        })
-    );
+    // // 認可外
+    // this.map.addLayer(
+    //     new ol.layer.Vector({
+    //         source: new ol.source.GeoJSON({
+    //             projection: 'EPSG:3857',
+    //             object: facilitiesData
+    //         }),
+    //         name: 'layerNinkagai',
+    //         style: ninkagaiStyleFunction
+    //     })
+    // );
     // 認可
     this.map.addLayer(
         new ol.layer.Vector({
@@ -189,6 +192,55 @@ Papamamap.prototype.addNurseryFacilitiesLayer = function(facilitiesData)
             style: ninkaStyleFunction
         })
     );
+
+
+        // 家庭的保育
+        this.map.addLayer(
+            new ol.layer.Vector({
+                source: new ol.source.GeoJSON({
+                    projection: 'EPSG:3857',
+                    object: facilitiesData
+                }),
+                name: 'layerKateiteki',
+                style: kateitekiStyleFunction
+            })
+        );
+        // 小規模保育所
+        this.map.addLayer(
+            new ol.layer.Vector({
+                source: new ol.source.GeoJSON({
+                    projection: 'EPSG:3857',
+                    object: facilitiesData
+                }),
+                name: 'layerShoukibo',
+                style: shoukiboStyleFunction
+            })
+        );
+
+        // 認定こども園
+        this.map.addLayer(
+            new ol.layer.Vector({
+                source: new ol.source.GeoJSON({
+                    projection: 'EPSG:3857',
+                    object: facilitiesData
+                }),
+                name: 'layerKodomoen',
+                style: kodomoenStyleFunction
+            })
+        );
+
+        // 認証
+        this.map.addLayer(
+            new ol.layer.Vector({
+                source: new ol.source.GeoJSON({
+                    projection: 'EPSG:3857',
+                    object: facilitiesData
+                }),
+                name: 'layerNinshou',
+                style: ninshouStyleFunction
+            })
+        );
+
 };
 
 /**
@@ -399,7 +451,7 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '</td>';
         content += '</tr>';
     }
-    if(type == "認可保育所") {
+    if(type == "認可保育園") {
 
         content += '<tr>';
         content += '<th>欠員</th>';
@@ -411,19 +463,19 @@ Papamamap.prototype.getPopupContent = function(feature)
         var vacancy4 = feature.get('Vacancy4') ? feature.get('Vacancy4') : feature.get('Vacancy4');
         var vacancy5 = feature.get('Vacancy5') ? feature.get('Vacancy5') : feature.get('Vacancy5');
 
-        if ((vacancy0 !== undefined && vacancy0 !== null)
-        || (vacancy1 !== undefined && vacancy1 !== null)
-        || (vacancy2 !== undefined && vacancy2 !== null)
-        || (vacancy3 !== undefined && vacancy3 !== null)
-        || (vacancy4 !== undefined && vacancy4 !== null)
-        || (vacancy5 !== undefined && vacancy5 !== null) )
+        if ((vacancy0 !== undefined && vacancy0 !== null && vacancy0 !== 0)
+        || (vacancy1 !== undefined && vacancy1 !== null && vacancy1 !== 0)
+        || (vacancy2 !== undefined && vacancy2 !== null && vacancy2 !== 0)
+        || (vacancy3 !== undefined && vacancy3 !== null && vacancy3 !== 0)
+        || (vacancy4 !== undefined && vacancy4 !== null && vacancy4 !== 0)
+        || (vacancy5 !== undefined && vacancy5 !== null && vacancy5 !== 0) )
         {
             content += '<font color="green">空きあり</font>';
 
         } else {
             content += '<font color="red">空きなし</font>';
         }
-        content += '(4/1現在)<br/>最新情報は<a href="http://www.city.nagareyama.chiba.jp/life/19/159/028025.html" target="_blank">流山市HPへ</a>';
+        content += '(テストデータ)';//'<br/>最新情報は公式HPへ'+'['+vacancy0+':'+vacancy1+':'+vacancy2+':'+vacancy3+':'+vacancy4+':'+vacancy5+']';
         content += '</td>';
         content += '</tr>';
     }
@@ -462,6 +514,30 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<tr>';
         content += '<th>設置者</th>';
         content += '<td>' + owner + '</td>';
+        content += '</tr>';
+    }
+
+    content += '<tr><td colspan=2><hr></td></tr>';
+    var can_age0 = feature.get('0歳保育') ? feature.get('0歳保育') : feature.get('can_age0');
+    if (can_age0 !== undefined && can_age0 !== null) {
+        content += '<tr>';
+        content += '<th>0歳保育</th>';
+        content += '<td>' + can_age0 + '</td>';
+        content += '</tr>';
+    }
+    var enchou_hoiku = feature.get('延長保育') ? feature.get('延長保育') : feature.get('enchou_hoiku');
+    if (enchou_hoiku !== undefined && enchou_hoiku !== null) {
+        content += '<tr>';
+        content += '<th>延長保育</th>';
+        content += '<td>' + enchou_hoiku + '</td>';
+        content += '</tr>';
+    }
+
+    var hid = feature.get('HID');
+    if (hid !== undefined && hid !== null) {
+        content += '<tr>';
+        content += '<th></th>';
+        content += '<td>' + '<a href="detail/' + hid + '.html">詳細情報はこちら</a>'+ '</td>';
         content += '</tr>';
     }
     content += '</tbody></table>';
