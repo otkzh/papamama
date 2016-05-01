@@ -421,36 +421,36 @@ Papamamap.prototype.getPopupContent = function(feature)
 
     if( temp !== null || holiday !== null || night !== null || h24 !== null) {
         content += '<tr>';
-        content += '<th></th>';
+        content += '<th>特記</th>';
         content += '<td>';
         if (temp !== undefined && temp !== null) {
-            content += '一時保育あり ';
+            content += '一時 ';
         }
         if (holiday !== undefined && holiday !== null) {
-            content += '休日保育あり ';
+            content += '休日 ';
         }
         if (night !== undefined && night !== null) {
-            content += '夜間保育あり ';
+            content += '夜間 ';
         }
         if (h24 !== undefined && h24 !== null) {
-            content += '24時間あり ';
+            content += '24時間 ';
         }
         content += '</td>';
         content += '</tr>';
     }
 
     var type = feature.get('種別') ? feature.get('種別') : feature.get('Type');
-    if(type == "認可外") {
-        content += '<tr>';
-        content += '<th>監督基準</th>';
-        content += '<td>';
-        var proof = feature.get('証明') ? feature.get('証明') : feature.get('Proof');
-        if (proof !== undefined && proof !== null) {
-            content += '証明書発行済<a href="http://www.city.sapporo.jp/kodomo/kosodate/ninkagai_shisetsu.html" target="_blank">(詳細)</a>';
-        }
-        content += '</td>';
-        content += '</tr>';
-    }
+    // if(type == "認可外") {
+    //     content += '<tr>';
+    //     content += '<th>監督基準</th>';
+    //     content += '<td>';
+    //     var proof = feature.get('証明') ? feature.get('証明') : feature.get('Proof');
+    //     if (proof !== undefined && proof !== null) {
+    //         content += '証明書発行済<a href="http://www.city.sapporo.jp/kodomo/kosodate/ninkagai_shisetsu.html" target="_blank">(詳細)</a>';
+    //     }
+    //     content += '</td>';
+    //     content += '</tr>';
+    // }
     if(type == "認可保育園") {
 
         content += '<tr>';
@@ -501,37 +501,37 @@ Papamamap.prototype.getPopupContent = function(feature)
         content += '<td>' + tel + '</td>';
         content += '</tr>';
     }
-    var add1 = feature.get('住所１') ? feature.get('住所１') : feature.get('Add1');
-    var add2 = feature.get('住所２') ? feature.get('住所２') : feature.get('Add2');
-    if (add1 !== undefined && add2 !== undefined) {
-        content += '<tr>';
-        content += '<th>住所</th>';
-        content += '<td>' + add1 + add2 +'</td>';
-        content += '</tr>';
-    }
-    var owner = feature.get('設置者') ? feature.get('設置者') : feature.get('Owner');
-    if (owner !== undefined && owner !== null) {
-        content += '<tr>';
-        content += '<th>設置者</th>';
-        content += '<td>' + owner + '</td>';
-        content += '</tr>';
-    }
-
-    content += '<tr><td colspan=2><hr></td></tr>';
-    var can_age0 = feature.get('0歳保育') ? feature.get('0歳保育') : feature.get('can_age0');
-    if (can_age0 !== undefined && can_age0 !== null) {
-        content += '<tr>';
-        content += '<th>0歳保育</th>';
-        content += '<td>' + can_age0 + '</td>';
-        content += '</tr>';
-    }
-    var enchou_hoiku = feature.get('延長保育') ? feature.get('延長保育') : feature.get('enchou_hoiku');
-    if (enchou_hoiku !== undefined && enchou_hoiku !== null) {
-        content += '<tr>';
-        content += '<th>延長保育</th>';
-        content += '<td>' + enchou_hoiku + '</td>';
-        content += '</tr>';
-    }
+    // var add1 = feature.get('住所１') ? feature.get('住所１') : feature.get('Add1');
+    // var add2 = feature.get('住所２') ? feature.get('住所２') : feature.get('Add2');
+    // if (add1 !== undefined && add2 !== undefined) {
+    //     content += '<tr>';
+    //     content += '<th>住所</th>';
+    //     content += '<td>' + add1 + add2 +'</td>';
+    //     content += '</tr>';
+    // }
+    // var owner = feature.get('設置者') ? feature.get('設置者') : feature.get('Owner');
+    // if (owner !== undefined && owner !== null) {
+    //     content += '<tr>';
+    //     content += '<th>設置者</th>';
+    //     content += '<td>' + owner + '</td>';
+    //     content += '</tr>';
+    // }
+    //
+    // content += '<tr><td colspan=2><hr></td></tr>';
+    // var can_age0 = feature.get('0歳保育') ? feature.get('0歳保育') : feature.get('can_age0');
+    // if (can_age0 !== undefined && can_age0 !== null) {
+    //     content += '<tr>';
+    //     content += '<th>0歳保育</th>';
+    //     content += '<td>' + can_age0 + '</td>';
+    //     content += '</tr>';
+    // }
+    // var enchou_hoiku = feature.get('延長保育') ? feature.get('延長保育') : feature.get('enchou_hoiku');
+    // if (enchou_hoiku !== undefined && enchou_hoiku !== null) {
+    //     content += '<tr>';
+    //     content += '<th>延長保育</th>';
+    //     content += '<td>' + enchou_hoiku + '</td>';
+    //     content += '</tr>';
+    // }
 
     var hid = feature.get('HID');
     if (hid !== undefined && hid !== null) {
